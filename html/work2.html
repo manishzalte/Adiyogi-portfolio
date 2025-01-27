@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Work - Adiyogi Films</title>
+    <link rel="icon" type="image/png" href="../favicon/trident.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon/trident.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background: var(--glass-bg);
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .work-container {
+            padding: 100px 5% 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #000000;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .work-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .card-content h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+
+        .card-content p {
+            margin: 0 0 1.5rem 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .card-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: #000000;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Theater View Styles */
+        .theater-view {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.3s ease;
+            grid-column: 1 / -1;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        .theater-view h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #000000;
+        }
+
+        .theater-view .video-wrapper {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        /* Remove unused modal styles */
+        .modal, .modal-content, .close, #open-theater {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">ADIYOGI FILMS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="work-container">
+        <h1 class="section-title">More Projects</h1>
+        
+        <div class="work-grid">
+            <!-- Project 1 -->
+            <div class="work-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/6wojMS423eY?autoplay=1&mute=1&loop=1&playlist=6wojMS423eY" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Pre-Wedding Shoot</h3>
+                    <p>A beautiful pre-wedding shoot capturing the essence of love and romance. Shot at scenic locations with cinematic storytelling.</p>
+                    <!-- <a href="https://youtu.be/6wojMS423eY?si=qSQ5Q4-xrMP_9gf2" class="card-button" target="_blank" rel="noopener noreferrer">View Details</a> -->
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="work-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/n3YFUw1rOrk?autoplay=1&mute=1&loop=1&playlist=n3YFUw1rOrk" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Bike Commercial</h3>
+                    <p>Experience the thrill of biking through stunning landscapes, showcasing the freedom and adventure that comes with every ride.</p>
+                    <!-- <a href="https://youtu.be/n3YFUw1rOrk?si=54FYGEq-zI7Gd9Le" class="card-button">View Details</a> -->
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="work-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/qEWcfSSOemE?autoplay=1&mute=1&loop=1&playlist=qEWcfSSOemE&playsinline=1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Musical Commercial</h3>
+                    <p>Creative product showcase with attention to detail and high-quality production values.</p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="work-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/U0jMQkUOSDk?autoplay=1&mute=1&loop=1&playlist=U0jMQkUOSDk" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Message from the CEO</h3>
+                    <p>Compelling storytelling through SelfHelp-style filmmaking, capturing real stories with authenticity.</p>
+                    <!-- <a href="https://youtu.be/U0jMQkUOSDk?si=PDgLBIRftv__VVe_" class="card-button">View Details</a> -->
+                </div>
+            </div>
+
+            <!-- Upcoming theater view video -->
+            <div class="theater-view">
+                <h3>Upcoming: Antak</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/8KgnFRYnDtM?autoplay=1&mute=1&loop=1&playlist=8KgnFRYnDtM" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="mailto:rohitvijaymahajan1998@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a>
+                <a href="http://www.youtube.com/@Roh1t98" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/adiyogi.films?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Adiyogi Films. All rights reserved. Site by <a href="https://www.linkedin.com/in/manish-zalte" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Manish Zalte</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Theater modal functionality
+        const modal = document.getElementById('theater-modal');
+        const openBtn = document.getElementById('open-theater');
+        const closeBtn = document.querySelector('.close');
+
+        function openTheater() {
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTheater() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeTheater();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeTheater();
+            }
+        });
+    </script>
+</body>
+</html> 

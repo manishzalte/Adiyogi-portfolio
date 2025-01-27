@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Adiyogi Films</title>
+    <link rel="icon" type="image/png" href="../favicon/trident.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon/trident.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background: var(--glass-bg);
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .about-container {
+            padding: 100px 5% 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #000000;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffffff;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -50px;
+            margin-right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -50px;
+            margin-left: -10px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .skills-section {
+            margin: 4rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .process-section {
+            margin: 4rem 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-step .step-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .hire-section {
+            margin: 4rem 0;
+        }
+
+        .hire-form {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::before {
+                left: -39px !important;
+                margin-left: 0 !important;
+            }
+
+            .skills-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .social-icons a {
+            color: #000000;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        footer p {
+            color: #000000;
+            margin-top: 1.5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-text h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .profile-text h3 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            font-size: 1rem;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">ADIYOGI FILMS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="#" class="active">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="about-container">
+        <h1 class="section-title">Our Journey</h1>
+        
+        <div class="about-content">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="../images/profile.jpeg" alt="Rohit Mahajan - Adiyogi Films">
+                </div>
+                <div class="profile-text">
+                    <h2>Rohit Mahajan</h2>
+                    <h3>Founder & Creative Director</h3>
+                    <p>At Adiyogi Films, we believe in creating cinematic experiences that tell compelling stories. Our journey has been marked by creativity, innovation, and a passion for visual storytelling.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2020</div>
+                    <h3 class="timeline-title">The Beginning</h3>
+                    <p>Started with a passion for storytelling through visuals, equipped with just a camera and endless creativity.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2021</div>
+                    <h3 class="timeline-title">First Major Project</h3>
+                    <p>Successfully completed our first wedding film project, marking the start of our professional journey.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2022</div>
+                    <h3 class="timeline-title">Expanding Horizons</h3>
+                    <p>Ventured into commercial filmmaking and corporate events, diversifying our portfolio.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023</div>
+                    <h3 class="timeline-title">Growing Team</h3>
+                    <p>Expanded our team with talented professionals, enhancing our capabilities and creative output.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2 class="section-title">Our Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Cinematography</h3>
+                    <p>Professional-grade equipment and techniques for stunning visuals.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Film Direction</h3>
+                    <p>Creative direction to bring your vision to life.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-edit"></i>
+                    <h3>Post Production</h3>
+                    <p>Expert editing and color grading for polished results.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-section">
+            <h2 class="section-title">Our Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision and requirements to plan the perfect shoot.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Planning</h3>
+                    <p>Detailed planning of shots, locations, and timeline.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Execution</h3>
+                    <p>Professional filming with attention to every detail.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Delivery</h3>
+                    <p>Final editing and delivery of your perfect video.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hire-section">
+            <h2 class="section-title">Work With Us</h2>
+            <form class="hire-form" id="proposalForm" onsubmit="openEmailClient(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-type">Project Type</label>
+                    <select id="project-type" name="project-type" required>
+                        <option value="">Select Project Type</option>
+                        <option value="Wedding Film">Wedding Film</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Music Video">Music Video</option>
+                        <option value="Event Coverage">Event Coverage</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" required placeholder="Please describe your project requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Open Email Client</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="mailto:rohitvijaymahajan1998@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a>
+                <a href="http://www.youtube.com/@Roh1t98" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/adiyogi.films?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Adiyogi Films. All rights reserved. Site by <a href="https://www.linkedin.com/in/manish-zalte" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Manish Zalte</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        function openEmailClient(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const projectType = form['project-type'].value.trim();
+            const message = form.message.value.trim();
+
+            // Create email body
+            const emailBody = `
+Dear Adiyogi Films,
+
+I would like to discuss a new project opportunity.
+
+Project Details:
+- Name: ${name}
+- Email: ${email}
+- Project Type: ${projectType}
+
+Message:
+${message}
+
+Best regards,
+${name}`;
+
+            // Create mailto link
+            const mailtoLink = `mailto:rohitvijaymahajan1998@gmail.com?subject=New Project Proposal - ${projectType}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open default email client
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html> 

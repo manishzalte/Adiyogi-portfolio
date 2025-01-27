@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Adiyogi Films</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../favicon/trident.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon/trident.png">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Glass morphism variables */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            --glass-blur: blur(10px);
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+        }
+
+        .image-section {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            pointer-events: none;
+        }
+
+        .text-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4rem;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-left: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            z-index: 1;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .text-content {
+            text-align: left;
+            margin: auto 0;
+        }
+
+        .main-heading {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .subheading {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.9s backwards;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .button-wrapper {
+            margin-top: 2rem;
+        }
+
+        .footer {
+            animation: fadeInUp 1s ease-out 1.2s backwards;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            margin-left: 30%;
+            transform: translateX(-30%);
+        }
+
+        .social-icons a {
+            color: #000000;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+            color: #000000;
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-bg.fade {
+            opacity: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .text-section {
+                padding: 2rem;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text-section {
+                padding: 1.5rem;
+            }
+
+            .main-heading {
+                font-size: 2rem;
+            }
+
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <video class="video-bg" autoplay muted loop playsinline onended="handleVideoEnd(this)">
+                <source src="../images/Rohit1.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="https://via.placeholder.com/800" alt="Fallback Image">
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="text-section">
+            <h1 class="company-name">ADIYOGI FILMS</h1>
+            <div class="text-content">
+                <h1 class="main-heading">LIVE TO TELL STORIES</h1>
+                <h2 class="subheading">Cinematographer & Storyteller</h2>
+                <div class="button-wrapper">
+                    <a href="work.html" class="button">VIEW MORE</a>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="social-icons">
+                    <a href="mailto:rohitvijaymahajan1998@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a>
+                    <a href="http://www.youtube.com/@Roh1t98" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/adiyogi.films?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add script for smooth loop transition -->
+    <script>
+        function handleVideoEnd(video) {
+            video.classList.add('fade');
+            setTimeout(() => {
+                video.currentTime = 0;
+                video.classList.remove('fade');
+            }, 50);
+        }
+
+        document.querySelectorAll('.social-icons a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                this.classList.add('clicked');
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 300);
+            });
+        });
+    </script>
+
+    <!-- Add Watermark -->
+    <!-- <div class="watermark">
+        <img src="../favicon/shiva.png" alt="Lord Shiva" class="watermark-image">
+        <span class="watermark-text">Adiyogi Films</span>
+    </div> -->
+</body>
+</html>
