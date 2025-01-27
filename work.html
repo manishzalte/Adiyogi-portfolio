@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Work - Adiyogi Films</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../favicon/trident.png">
+    <link rel="shortcut icon" type="image/png" href="../favicon/trident.png">
+
+    <link rel="stylesheet" href="public/css/work.css">
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background: var(--glass-bg);
+            color: #000000;
+        }
+
+        .work-container {
+            padding: 100px 5% 50px;
+        }
+
+        .section-title {
+            color: #000000;
+            text-align: center;
+            text-shadow: none;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .work-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .work-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .work-info h3 {
+            color: #000000;
+        }
+
+        .view-more {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .view-more-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000000;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .view-more-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .services {
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            margin: 2rem 5%;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item i {
+            color: #000000;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3, .service-item p {
+            color: #000000;
+        }
+
+        .testimonials {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 4rem 5%;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            color: #000000;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glass-hover-shadow);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: #000000;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+        }
+
+        footer p {
+            color: #000000;
+            margin-top: 1.5rem;
+        }
+
+        footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">ADIYOGI FILMS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Work</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="work-container">
+        <h1 class="section-title">Our Work</h1>
+        
+        <div class="work-grid">
+            <!-- Video 1 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/8KgnFRYnDtM?autoplay=1&mute=1&loop=1&playlist=8KgnFRYnDtM" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Cinematic Film</h3>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/HTceWXJ_m6I?autoplay=1&mute=1&loop=1&playlist=HTceWXJ_m6I"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Director's Showcase</h3>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/6wojMS423eY?autoplay=1&mute=1&loop=1&playlist=6wojMS423eY"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Wedding Film</h3>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/n3YFUw1rOrk?autoplay=1&mute=1&loop=1&playlist=n3YFUw1rOrk"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Commercial</h3>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/qEWcfSSOemE?autoplay=1&mute=1&loop=1&playlist=qEWcfSSOemE"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Music Video</h3>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="work-item wide">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/F3rVFiT53tk?autoplay=1&mute=1&loop=1&playlist=F3rVFiT53tk"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="work-info">
+                    <h3>Event Coverage</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-more">
+            <a href="work2.html" class="view-more-btn">
+                Explore More Projects
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="services glass-effect">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-item glass-effect">
+                <i class="fas fa-video"></i>
+                <h3>Video Production</h3>
+                <p>We create cinematic experiences that tell your story.</p>
+            </div>
+            <div class="service-item glass-effect">
+                <i class="fas fa-camera-retro"></i>
+                <h3>Photography</h3>
+                <p>High-quality photos for any occasion or purpose.</p>
+            </div>
+            <div class="service-item glass-effect">
+                <i class="fas fa-edit"></i>
+                <h3>Post-Production</h3>
+                <p>Seamless editing to bring your vision to life.</p>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <p>"Adiyogi Films exceeded our expectations!"</p>
+                <h4>- Rupesh Spakale</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The team captured our wedding perfectly."</p>
+                <h4>- Nikhil x Nikita</h4>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="mailto:rohitvijaymahajan1998@gmail.com" target="_blank" rel="noopener noreferrer"><i class="far fa-envelope"></i></a>
+                <a href="http://www.youtube.com/@Roh1t98" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/adiyogi.films?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Adiyogi Films. All rights reserved. Site by <a href="https://www.linkedin.com/in/manish-zalte" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Manish Zalte</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
+
+        // Activate animations after page load
+        window.addEventListener('load', function() {
+            const workGrid = document.querySelector('.work-grid');
+            setTimeout(() => {
+                workGrid.classList.add('loaded');
+            }, 100);
+        });
+    </script>
+
+    <!-- Add Instagram embed script at the end of body -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html> 

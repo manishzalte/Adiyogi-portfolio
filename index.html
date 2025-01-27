@@ -24,12 +24,17 @@
         body {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         .container {
-            position: relative;
-            height: 100vh;
+            width: 100%;
+            max-width: 100%;
             display: flex;
+            flex-direction: row;
+            height: 100vh;
         }
 
         .image-section {
@@ -60,9 +65,6 @@
 
         .text-section {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             padding: 4rem;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
@@ -226,7 +228,7 @@
     <div class="container">
         <div class="image-section">
             <video class="video-bg" autoplay muted loop playsinline onended="handleVideoEnd(this)">
-                <source src="/public/images/Rohit1.mp4" type="video/mp4">
+                <source src="public/images/Rohit1.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
                 <img src="https://via.placeholder.com/800" alt="Fallback Image">
             </video>
@@ -251,7 +253,6 @@
         </div>
     </div>
 
-    <!-- Add script for smooth loop transition -->
     <script>
         function handleVideoEnd(video) {
             video.classList.add('fade');
@@ -271,10 +272,5 @@
         });
     </script>
 
-    <!-- Add Watermark -->
-    <!-- <div class="watermark">
-        <img src="../favicon/shiva.png" alt="Lord Shiva" class="watermark-image">
-        <span class="watermark-text">Adiyogi Films</span>
-    </div> -->
 </body>
 </html>
